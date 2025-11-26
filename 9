@@ -1,0 +1,28 @@
+programa
+{
+	const inteiro TAMANHO = 5
+	inteiro meuVetor[TAMANHO]
+	funcao imprimirAoContrario(inteiro vetorInteiros[], inteiro n) 
+	{
+		inteiro j 
+		
+		escreva("\n--- Imprimindo o Vetor do кltimo ao Primeiro ---\n")
+		para (j = n - 1; j >= 0; j--)
+		{
+			escreva("Posiчуo [", j, "]: ", vetorInteiros[j], "\n")
+		}
+		
+		escreva("--------------------------------------------------\n")
+	}
+	funcao inicio()
+	{
+		meuVetor[0] = 10
+		meuVetor[1] = 20
+		meuVetor[2] = 30 
+		meuVetor[3] = 40
+		meuVetor[4] = 50
+		
+		escreva("Vetor Original (эndice 0 ao 4): [10, 20, 30, 40, 50]\n")
+		imprimirAoContrario(meuVetor, TAMANHO)
+	}
+}
