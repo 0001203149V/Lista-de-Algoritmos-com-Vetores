@@ -1,0 +1,36 @@
+programa
+{
+    const inteiro N_DIMENSAO = 3 
+    inteiro minhaMatriz[N_DIMENSAO][N_DIMENSAO]
+
+    funcao inicio()
+    {
+        inteiro somaDiagonal
+        inteiro linha, coluna
+        escreva("-> Iniciando carregamento da matriz ", N_DIMENSAO, "x", N_DIMENSAO, "\n")
+        
+        para (linha = 0; linha < N_DIMENSAO; linha++)
+        {
+            para (coluna = 0; coluna < N_DIMENSAO; coluna++)
+            {
+                escreva("Digite o valor para a posição [", linha, "][", coluna, "]: ")
+                leia(minhaMatriz[linha][coluna])
+            }
+        }
+        escreva("-> Carregamento concluído com sucesso.\n")
+        somaDiagonal = somarDiagonalPrincipal()
+
+        escreva("\n--- Resultado ---\n")
+        escreva("A soma dos elementos da Diagonal Principal é: ", somaDiagonal, "\n")
+    }
+    funcao inteiro somarDiagonalPrincipal()
+    {
+        inteiro soma = 0 
+        inteiro indice 
+        para (indice = 0; indice < N_DIMENSAO; indice++)
+        {
+            soma = soma + minhaMatriz[indice][indice]
+        }
+        retorne soma
+    }
+}
