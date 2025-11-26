@@ -1,0 +1,52 @@
+programa
+{
+	const inteiro TAMANHO = 5
+	inteiro vetorA[TAMANHO]
+	inteiro vetorB[TAMANHO] 
+	funcao copiarVetor(inteiro vetorOrigem[], inteiro vetorDestino[], inteiro n) 
+	{
+		inteiro j 
+		
+		escreva("\n--- Iniciando Cópia de A para B ---\n")
+		para (j = 0; j < n; j++)
+		{
+			vetorDestino[j] = vetorOrigem[j]
+			escreva("Copiando A[", j, "] (", vetorOrigem[j], ") para B[", j, "]\n")
+		}
+		
+		escreva("--- Cópia Concluída ---\n")
+	}
+
+	funcao exibirVetor(inteiro vetor[], cadeia nome, inteiro n) 
+	{
+		inteiro j
+		escreva("\nConteúdo do ", nome, ": [")
+		para (j = 0; j < n; j++)
+		{
+			escreva(vetor[j])
+			se (j < n - 1) {
+				escreva(", ")
+			}
+		}
+		escreva("]\n")
+	}
+
+	funcao inicio()
+	{
+		vetorA[0] = 10
+		vetorA[1] = 20
+		vetorA[2] = 30
+		vetorA[3] = 40
+		vetorA[4] = 50
+		vetorB[0] = 0
+		vetorB[1] = 0
+		vetorB[2] = 0
+		vetorB[3] = 0
+		vetorB[4] = 0
+		
+		exibirVetor(vetorA, "Vetor A (Origem)", TAMANHO)
+		exibirVetor(vetorB, "Vetor B (Antes da Cópia)", TAMANHO)
+		copiarVetor(vetorA, vetorB, TAMANHO)
+		exibirVetor(vetorB, "Vetor B (Após a Cópia)", TAMANHO)
+	}
+}
