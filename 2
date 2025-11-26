@@ -1,0 +1,33 @@
+programa
+{
+	const inteiro TAMANHO = 5
+	inteiro meuVetor[TAMANHO]
+	funcao preencherVetor(inteiro vetorInteiros[], inteiro n) 
+	{
+		inteiro j
+		
+		escreva("\n--- Preenchimento do Vetor ---\n")
+		para (j = 0; j < n; j++)
+		{
+			escreva("Digite o valor para a posiзгo ", (j + 1), " (Нndice [", j, "]): ")
+			leia(vetorInteiros[j])
+		}
+		escreva("--------------------------------\n")
+	}
+	funcao exibirVetor(inteiro vetorInteiros[], inteiro n) 
+	{
+		inteiro j
+		escreva("\n--- Conteъdo Final do Vetor ---\n")
+		para (j = 0; j < n; j++)
+		{
+			escreva("Posiзгo [", j, "]: ", vetorInteiros[j], "\n")
+		}
+		escreva("-------------------------------\n")
+	}
+	funcao inicio()
+	{
+		escreva("O vetor tem um tamanho fixo de ", TAMANHO, " elementos.\n")
+		preencherVetor(meuVetor, TAMANHO)
+		exibirVetor(meuVetor, TAMANHO)
+	}
+}
