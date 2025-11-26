@@ -1,0 +1,76 @@
+programa
+{
+	const inteiro TAMANHO = 5
+	cadeia sopa[TAMANHO][TAMANHO] = {
+		{"S", "E", "N", "A", "I"}, 
+		{"C", "O", "D", "E", "R"},
+		{"O", "P", "E", "R", "A"}, 
+		{"C", "I", "R", "C", "L"}, 
+		{"E", "X", "T", "R", "A"}
+	}
+
+	funcao inicio()
+	{
+		
+		cadeia palavraAlvo = "SENAI"
+		logico encontrou
+
+		escreva("--- CAÇA-PALAVRAS: BUSCA POR '", palavraAlvo, "' ---\n")
+		escreva("\nMatriz Sopa de Letras (5x5):\n")
+		para (inteiro l = 0; l < TAMANHO; l++) {
+			para (inteiro c = 0; c < TAMANHO; c++) {
+				escreva(sopa[l][c], " ")
+			}
+			escreva("\n")
+		}
+		escreva("----------------------------------\n")
+		encontrou = buscarPalavra(palavraAlvo) 
+		se (encontrou) {
+			escreva("\n? SUCESSO! A palavra '", palavraAlvo, "' foi encontrada na sopa!")
+		} senao {
+			escreva("\n? FALHA! A palavra '", palavraAlvo, "' NÃO foi encontrada.")
+		}
+
+		escreva("\n\nPressione ENTER para fechar...")
+		leia() 
+	}
+	funcao logico buscarPalavra(cadeia palavra)
+	{
+		const inteiro tamanhoPalavra = 5 
+		const inteiro limiteBusca = TAMANHO - tamanhoPalavra + 1 
+		
+		cadeia palavraCandidata
+		para (inteiro l = 0; l < TAMANHO; l++)
+		{
+			para (inteiro c = 0; c < limiteBusca; c++)
+			{
+				palavraCandidata = "" 
+				para (inteiro k = 0; k < tamanhoPalavra; k++)
+				{
+					palavraCandidata = palavraCandidata + sopa[l][c + k] 
+				}
+				se (palavraCandidata == palavra) {
+					escreva("\nEncontrada Horizontalmente na Linha ", l, " e Coluna ", c, ".\n")
+					retorne verdadeiro 
+				}
+			}
+		}
+		para (inteiro c = 0; c < TAMANHO; c++) 
+		{
+			para (inteiro l = 0; l < limiteBusca; l++)
+			{
+				palavraCandidata = "" 
+				para (inteiro k = 0; k < tamanhoPalavra; k++)
+				{
+					palavraCandidata = palavraCandidata + sopa[l + k][c] 
+				}
+				se (palavraCandidata == palavra) {
+					escreva("\nEncontrada Verticalmente na Coluna ", c, " e Linha ", l, ".\n") 
+					retorne verdadeiro 
+				}
+			}
+		}
+		
+		retorne falso
+	}
+}
