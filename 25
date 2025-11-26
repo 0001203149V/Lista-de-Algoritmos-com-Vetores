@@ -1,0 +1,35 @@
+programa
+{
+    const inteiro TAMANHO = 4
+
+    funcao inicio()
+    {
+        inteiro vetor[TAMANHO]
+        inteiro primeiroElemento
+        inteiro i 
+        escreva("--- Carregamento do Vetor (", TAMANHO, " elementos) ---\n")
+        para (i = 0; i < TAMANHO; i++)
+        {
+            escreva("Digite o elemento [", i, "]: ")
+            leia(vetor[i])
+        }
+        escreva("\n--- Vetor Original ---\n")
+        para (i = 0; i < TAMANHO; i++)
+        {
+            escreva(vetor[i], " ")
+        }
+        escreva("\n")
+        primeiroElemento = vetor[0]
+        para (i = 0; i < TAMANHO - 1; i++)
+        {
+            vetor[i] = vetor[i+1] 
+        }
+        vetor[TAMANHO - 1] = primeiroElemento
+        escreva("\n--- Vetor Rotacionado para a Esquerda ---\n")
+        para (i = 0; i < TAMANHO; i++)
+        {
+            escreva(vetor[i], " ")
+        }
+        escreva("\n")
+    }
+}
