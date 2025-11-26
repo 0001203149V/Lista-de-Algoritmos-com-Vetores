@@ -1,0 +1,49 @@
+programa
+{
+    const inteiro N_LINHAS = 3
+    const inteiro N_COLUNAS = 3
+
+    funcao inicio()
+    {
+        inteiro matrizA[N_LINHAS][N_COLUNAS]
+        inteiro matrizB[N_LINHAS][N_COLUNAS]
+        inteiro matrizR[N_LINHAS][N_COLUNAS]
+        
+        inteiro linha, coluna
+        escreva("--- Carregamento da MATRIZ A (", N_LINHAS, "x", N_COLUNAS, ") ---\n")
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                escreva("A[", linha, "][", coluna, "]: ")
+                leia(matrizA[linha][coluna])
+            }
+        }
+        escreva("\n--- Carregamento da MATRIZ B (", N_LINHAS, "x", N_COLUNAS, ") ---\n")
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                escreva("B[", linha, "][", coluna, "]: ")
+                leia(matrizB[linha][coluna])
+            }
+        }
+        escreva("\n--- Calculando a Soma: R = A + B ---\n")
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                matrizR[linha][coluna] = matrizA[linha][coluna] + matrizB[linha][coluna]
+            }
+        }
+        escreva("\n--- MATRIZ RESULTADO (R) ---\n")
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                escreva(matrizR[linha][coluna], "\t") 
+            }
+            escreva("\n") 
+        }
+    }
+}
