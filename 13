@@ -1,0 +1,40 @@
+programa
+{
+    const inteiro N_LINHAS = 3
+    const inteiro N_COLUNAS = 3
+    inteiro minhaMatriz[N_LINHAS][N_COLUNAS]
+
+    funcao inicio()
+    {
+        inteiro somaTotal
+        inteiro linha, coluna
+        escreva("-> Iniciando carregamento da matriz ", N_LINHAS, "x", N_COLUNAS, "\n")
+        
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                escreva("Digite o valor para a posiзгo [", linha, "][", coluna, "]: ")
+                leia(minhaMatriz[linha][coluna])
+            }
+        }
+        escreva("-> Carregamento concluнdo com sucesso.\n")
+        somaTotal = somarElementos()
+
+        escreva("\n--- Resultado ---\n")
+        escreva("A soma de todos os elementos da matriz й: ", somaTotal, "\n")
+    }
+    funcao inteiro somarElementos()
+    {
+        inteiro soma = 0
+        inteiro linha, coluna
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                soma = soma + minhaMatriz[linha][coluna]
+            }
+        }
+        retorne soma
+    }
+}
