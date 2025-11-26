@@ -1,0 +1,188 @@
+programa
+{
+	const inteiro TAMANHO_TABULEIRO = 3 
+
+	funcao inicio()
+	{
+		cadeia tabuleiro[3][3] 
+		inteiro jogadorAtual
+		inteiro totalJogadas
+		logico jogoTerminou
+		inteiro l
+		inteiro c 
+		inteiro i
+		cadeia pausa
+		logico jogadaValida
+		inteiro linha
+		inteiro coluna
+		cadeia simbolo
+		logico venceu
+		
+		jogadorAtual = 1
+		totalJogadas = 0
+		jogoTerminou = falso
+		para (l = 0; l < 3; l++) 
+		{
+			para (c = 0; c < 3; c++)
+			{
+				tabuleiro[l][c] = " "
+			}
+		}
+		enquanto (nao jogoTerminou e totalJogadas < 9)
+		{
+			para (i = 0; i < 50; i++)
+			{
+				escreva("\n")
+			}
+			
+			escreva("--- JOGO DA VELHA ---\n")
+			simbolo = ""
+			se (jogadorAtual == 1) { simbolo = "X" } senao { simbolo = "O" }
+			escreva("Vez do Jogador ", jogadorAtual, " (", simbolo, ")\n\n")
+			escreva("   1 | 2 | 3\n")
+			escreva("  ---|---|---\n")
+			
+			para (l = 0; l < 3; l++)
+			{
+				escreva(l + 1, " ")
+				para (c = 0; c < 3; c++)
+				{
+					escreva("|", tabuleiro[l][c]) 
+				}
+				escreva("|\n")
+				
+				se (l < 3 - 1)
+				{
+					escreva("  ---|---|---\n")
+				}
+			}
+			escreva("\n")
+			// ---------------------------------
+			jogadaValida = falso
+			se (jogadorAtual == 1) { simbolo = "X" } senao { simbolo = "O" }
+			
+			enquanto (nao jogadaValida)
+			{
+				escreva("Informe a **LINHA** (1 a 3): ") 
+				leia(linha)
+				
+				escreva("Informe a **COLUNA** (1 a 3): ") 
+				leia(coluna)
+				
+				linha = linha - 1
+				coluna = coluna - 1
+				
+				se (linha >= 0 e linha < 3 e coluna >= 0 e coluna < 3)
+				{
+					se (tabuleiro[linha][coluna] == " ") 
+					{
+						tabuleiro[linha][coluna] = simbolo
+						jogadaValida = verdadeiro
+					}
+					senao
+					{
+						escreva("\n? ERRO: Posiзгo (", linha + 1, ",", coluna + 1, ") jб ocupada! Tente novamente.\n\n")
+					}
+				}
+				senao
+				{
+					escreva("\n? ERRO: Linha ou Coluna invбlida! Valores devem ser de 1 a 3. Tente novamente.\n\n")
+				}
+			}
+			venceu = falso
+			para (i = 0; i < 3; i++)
+			{
+				cadeia simboloLinha = tabuleiro[i][0]
+				cadeia simboloColuna = tabuleiro[0][i]
+				se (simboloLinha != " " e simboloLinha == tabuleiro[i][1] e simboloLinha == tabuleiro[i][2])
+				{
+					venceu = verdadeiro
+				}
+				se (simboloColuna != " " e simboloColuna == tabuleiro[1][i] e simboloColuna == tabuleiro[2][i])
+				{
+					venceu = verdadeiro
+				}
+			}
+			cadeia simboloDP = tabuleiro[0][0]
+			se (simboloDP != " " e simboloDP == tabuleiro[1][1] e simboloDP == tabuleiro[2][2])
+			{
+				venceu = verdadeiro
+			}
+			cadeia simboloDS = tabuleiro[0][2]
+			se (simboloDS != " " e simboloDS == tabuleiro[1][1] e simboloDS == tabuleiro[2][0])
+			{
+				venceu = verdadeiro
+			}
+			// -----------------------------
+
+
+			se (venceu) 
+			{
+				para (i = 0; i < 50; i++)
+				{
+					escreva("\n")
+				}
+				escreva("--- FIM DE JOGO ---\n")
+				escreva("   1 | 2 | 3\n")
+				escreva("  ---|---|---\n")
+				para (l = 0; l < 3; l++)
+				{
+					escreva(l + 1, " ")
+					para (c = 0; c < 3; c++)
+					{
+						escreva("|", tabuleiro[l][c]) 
+					}
+					escreva("|\n")
+					se (l < 3 - 1)
+					{
+						escreva("  ---|---|---\n")
+					}
+				}
+				escreva("\n")
+
+				se (jogadorAtual == 1) { simbolo = "X" } senao { simbolo = "O" }
+				escreva("\n\n?? **JOGADOR ", jogadorAtual, " (", simbolo, ") VENCEU!** ??\n")
+				jogoTerminou = verdadeiro
+			}
+			senao
+			{
+				totalJogadas = totalJogadas + 1
+				
+				se (totalJogadas < 9 e nao jogoTerminou)
+				{
+					jogadorAtual = (jogadorAtual % 2) + 1 
+				}
+			}
+		}
+		se (totalJogadas == 9 e nao jogoTerminou)
+		{
+			para (i = 0; i < 50; i++)
+			{
+				escreva("\n")
+			}
+
+			escreva("--- FIM DE JOGO ---\n")
+			escreva("   1 | 2 | 3\n")
+			escreva("  ---|---|---\n")
+			para (l = 0; l < 3; l++)
+			{
+				escreva(l + 1, " ")
+				para (c = 0; c < 3; c++)
+				{
+					escreva("|", tabuleiro[l][c]) 
+				}
+				escreva("|\n")
+				se (l < 3 - 1)
+				{
+					escreva("  ---|---|---\n")
+				}
+			}
+			escreva("\n")
+
+			escreva("\n\n**DEU VELHA! (EMPATE)**\n")
+		}
+		
+		escreva("\n\nPressione ENTER para fechar o console...")
+		leia(pausa) 
+	}
+}
