@@ -1,0 +1,25 @@
+programa
+{
+	const inteiro TAMANHO = 5
+	inteiro meuVetor[TAMANHO]
+	funcao exibirVetor(inteiro vetorInteiros[], inteiro n) 
+	{
+		inteiro j 
+		
+		escreva("\n--- Exibindo o Vetor ---\n")
+		para (j = 0; j < n; j++)
+		{
+			escreva("Posição [", j, "]: ", vetorInteiros[j], "\n")
+		}
+		escreva("------------------------\n")
+	}
+	funcao inicio()
+	{
+		meuVetor[0] = 10
+		meuVetor[1] = 25
+		meuVetor[2] = 42
+		meuVetor[3] = 77
+		meuVetor[4] = 91
+		exibirVetor(meuVetor, TAMANHO)
+	}
+}
