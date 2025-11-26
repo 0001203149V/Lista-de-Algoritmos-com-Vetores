@@ -1,0 +1,46 @@
+programa
+{
+    const inteiro N_LINHAS = 3
+    const inteiro N_COLUNAS = 3
+    inteiro minhaMatriz[N_LINHAS][N_COLUNAS]
+
+    funcao inicio()
+    {
+        inteiro maiorValor
+        inteiro linha, coluna
+        escreva("-> Iniciando carregamento da matriz ", N_LINHAS, "x", N_COLUNAS, "\n")
+        
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                escreva("Digite o valor para a posiзгo [", linha, "][", coluna, "]: ")
+                leia(minhaMatriz[linha][coluna])
+            }
+        }
+        escreva("-> Carregamento concluнdo com sucesso.\n")
+        maiorValor = encontrarMaior()
+
+        escreva("\n--- Resultado ---\n")
+        escreva("O maior valor presente na matriz й: ", maiorValor, "\n")
+    }
+    funcao inteiro encontrarMaior()
+    {
+        inteiro maior = 0 
+        inteiro linha, coluna
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                se (linha == 0 e coluna == 0) {
+                    maior = minhaMatriz[linha][coluna]
+                }
+                senao se (minhaMatriz[linha][coluna] > maior)
+                {
+                    maior = minhaMatriz[linha][coluna]
+                }
+            }
+        }
+        retorne maior
+    }
+}
