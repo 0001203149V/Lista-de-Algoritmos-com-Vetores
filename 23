@@ -1,0 +1,42 @@
+programa
+{
+    const inteiro TAMANHO = 5 
+    inteiro meuVetor[TAMANHO]
+    funcao inteiro verificarPalindromo()
+    {
+        inteiro i, j
+        j = TAMANHO - 1
+        para (i = 0; i < TAMANHO / 2; i++)
+        {
+            se (meuVetor[i] != meuVetor[j])
+            {
+                retorne 0 // Falso
+            }
+            j = j - 1
+        }
+        retorne 1 
+    }
+
+    funcao inicio()
+    {
+        inteiro i
+        inteiro resultadoLogico
+        escreva("--- Carregamento do Vetor (", TAMANHO, " elementos) ---\n")
+        para (i = 0; i < TAMANHO; i++)
+        {
+            escreva("Digite o elemento ", i, ": ")
+            leia(meuVetor[i])
+        }
+        resultadoLogico = verificarPalindromo()
+
+        escreva("\n--- Resultado ---\n")
+        se (resultadoLogico == 1)
+        {
+            escreva("O vetor É um palíndromo (verdadeiro).\n")
+        }
+        senao
+        {
+            escreva("O vetor NÃO щ um palíndromo (falso).\n")
+        }
+    }
+}
