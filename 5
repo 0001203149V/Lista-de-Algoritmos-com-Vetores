@@ -1,0 +1,34 @@
+programa
+{
+	const inteiro TAMANHO = 6
+	inteiro meuVetor[TAMANHO]
+	funcao inteiro encontrarMaior(inteiro vetorInteiros[], inteiro n) 
+	{
+		inteiro j 
+		inteiro maior = vetorInteiros[0] 
+		para (j = 1; j < n; j++)
+		{
+			se (vetorInteiros[j] > maior)
+			{
+				maior = vetorInteiros[j]
+			}
+		}
+		retorne maior
+	}
+	funcao inicio()
+	{
+		inteiro maiorValor
+		meuVetor[0] = 45
+		meuVetor[1] = 12
+		meuVetor[2] = 88 
+		meuVetor[3] = 30
+		meuVetor[4] = 71
+		meuVetor[5] = 25
+		
+		escreva("Vetor de entrada: [45, 12, 88, 30, 71, 25]\n")
+
+		maiorValor = encontrarMaior(meuVetor, TAMANHO)
+		
+		escreva("O maior valor presente no vetor é: ", maiorValor, "\n")
+	}
+}
