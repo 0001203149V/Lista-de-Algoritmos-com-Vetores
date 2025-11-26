@@ -1,0 +1,29 @@
+programa
+{
+    funcao inicio()
+    {
+        const inteiro N_LINHAS = 3
+        const inteiro N_COLUNAS = 3
+        inteiro minhaMatriz[N_LINHAS][N_COLUNAS] = {{10, 20, 30},
+                                                    {40, 50, 60},
+                                                    {70, 80, 90}}
+        
+        inteiro linha, coluna
+
+        escreva("--- Exibindo Matriz ", N_LINHAS, "x", N_COLUNAS, " ---\n")
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                escreva(minhaMatriz[linha][coluna])
+                se (coluna < N_COLUNAS - 1)
+                {
+                    escreva("\t")
+                }
+            }
+            escreva("\n")
+        }
+        
+        escreva("-----------------------------------\n")
+    }
+}
