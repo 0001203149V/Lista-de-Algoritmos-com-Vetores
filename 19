@@ -1,0 +1,40 @@
+programa
+{
+    const inteiro N_LINHAS = 4
+    const inteiro N_COLUNAS = 3
+
+    funcao inicio()
+    {
+        inteiro minhaMatriz[N_LINHAS][N_COLUNAS]
+        inteiro colunaDesejada
+        inteiro soma = 0     
+        inteiro linha, coluna
+        escreva("-> Iniciando carregamento da matriz ", N_LINHAS, "x", N_COLUNAS, "\n")
+        
+        para (linha = 0; linha < N_LINHAS; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS; coluna++)
+            {
+                escreva("Digite o valor para a posição [", linha, "][", coluna, "]: ")
+                leia(minhaMatriz[linha][coluna])
+            }
+        }
+        escreva("-> Carregamento concluнdo com sucesso.\n")
+        escreva("\nQual coluna vocк deseja somar? (Digite um valor entre 0 e ", N_COLUNAS - 1, "): ")
+        leia(colunaDesejada)
+        se (colunaDesejada >= 0 e colunaDesejada < N_COLUNAS)
+        {
+            para (linha = 0; linha < N_LINHAS; linha++)
+            {
+                soma = soma + minhaMatriz[linha][colunaDesejada]
+            }
+
+            escreva("\n--- Resultado ---\n")
+            escreva("A soma dos elementos da Coluna ", colunaDesejada, " й: ", soma, "\n")
+        }
+        senao
+        {
+            escreva("\nERRO: O нndice da coluna й inválido. Por favor, digite um valor entre 0 e ", N_COLUNAS - 1, ".\n")
+        }
+    }
+}
