@@ -1,0 +1,48 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		const inteiro LINHAS_A = 2
+		const inteiro COLUNAS_A = 3 
+		const inteiro LINHAS_B = 3
+		const inteiro COLUNAS_B = 2
+		const inteiro LINHAS_R = LINHAS_A
+		const inteiro COLUNAS_R = COLUNAS_Bs
+		inteiro matrizA[LINHAS_A][COLUNAS_A] = {{1, 2, 3},
+		                                       {4, 5, 6}}
+		inteiro matrizB[LINHAS_B][COLUNAS_B] = {{7, 8},
+		                                       {9, 10},
+		                                       {11, 12}}
+		
+		inteiro matrizR[LINHAS_R][COLUNAS_R]
+		inteiro l 
+		inteiro c 
+		inteiro k 
+
+		escreva("--- MULTIPLICAК├O DE MATRIZES A(2x3) * B(3x2) ---\n\n")
+		para (l = 0; l < LINHAS_R; l++)
+		{
+			para (c = 0; c < COLUNAS_R; c++)
+			{
+
+				para (k = 0; k < COLUNAS_A; k++) 
+				{
+					matrizR[l][c] = matrizR[l][c] + (matrizA[l][k] * matrizB[k][c])
+				}
+			}
+		}
+		escreva("Matriz Resultado R (2x2):\n")
+		para (l = 0; l < LINHAS_R; l++)
+		{
+			escreva("|")
+			para (c = 0; c < COLUNAS_R; c++)
+			{
+				escreva(" ", matrizR[l][c], " ")
+			}
+			escreva("|\n")
+		}
+		escreva("\n\nPressione ENTER para fechar...")
+		leia(pausa) 
+	}
+}
