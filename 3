@@ -1,0 +1,27 @@
+programa
+{
+	const inteiro TAMANHO = 5
+	inteiro meuVetor[TAMANHO]
+	funcao inteiro somarVetor(inteiro vetorInteiros[], inteiro n) 
+	{
+		inteiro j 
+		inteiro soma = 0 
+		para (j = 0; j < n; j++)
+		{
+			soma = soma + vetorInteiros[j]
+		}
+		retorne soma
+	}
+	funcao inicio()
+	{
+		inteiro resultadoSoma
+		meuVetor[0] = 10
+		meuVetor[1] = 20
+		meuVetor[2] = 30
+		meuVetor[3] = 40
+		meuVetor[4] = 50
+		resultadoSoma = somarVetor(meuVetor, TAMANHO)
+		escreva("O vetor possui os seguintes valores: 10, 20, 30, 40, 50\n")
+		escreva("A soma de todos os elementos do vetor é: ", resultadoSoma, "\n")
+	}
+}
