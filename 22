@@ -1,0 +1,50 @@
+programa
+{
+    const inteiro N_ALUNOS = 4 
+    const inteiro N_NOTAS = 3  
+    const inteiro FATOR_PRECISAO = 100 
+
+    funcao inicio()
+    {
+        inteiro notas[N_ALUNOS][N_NOTAS] 
+        inteiro medias[N_ALUNOS]          
+        
+        inteiro linha, coluna
+        inteiro somaNotas
+        inteiro mediaFinal
+        escreva("--- Carregamento da Matriz de Notas (", N_ALUNOS, " Alunos, ", N_NOTAS, " Notas) ---\n")
+        
+        para (linha = 0; linha < N_ALUNOS; linha++)
+        {
+            escreva("\nAluno ", linha + 1, ":\n")
+            para (coluna = 0; coluna < N_NOTAS; coluna++)
+            {
+                escreva("  Nota ", coluna + 1, ": ")
+                leia(notas[linha][coluna])
+            }
+        }
+        escreva("\n-> Carregamento concluнdo.\n")
+        escreva("\n--- Calculando as Médias ---\n")
+        
+        para (linha = 0; linha < N_ALUNOS; linha++)
+        {
+            somaNotas = 0 
+
+            para (coluna = 0; coluna < N_NOTAS; coluna++)
+            {
+                somaNotas = somaNotas + notas[linha][coluna]
+            }
+            mediaFinal = (somaNotas * FATOR_PRECISAO) / N_NOTAS
+            medias[linha] = mediaFinal
+        }
+        escreva("\n--- VETOR DE MÍDIAS RESULTANTE ---\n")
+        para (linha = 0; linha < N_ALUNOS; linha++)
+        {
+            inteiro parteInteira = medias[linha] / FATOR_PRECISAO 
+            inteiro parteDecimal = medias[linha] % FATOR_PRECISAO 
+
+            escreva("Média do Aluno ", linha + 1, ": ", parteInteira, ".", parteDecimal, "\n")
+        }
+        escreva("------------------------------------\n")
+    }
+}
