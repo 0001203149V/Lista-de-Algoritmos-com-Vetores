@@ -1,0 +1,41 @@
+programa
+{
+    const inteiro N_LINHAS_A = 3
+    const inteiro N_COLUNAS_A = 4 
+    const inteiro N_LINHAS_B = N_COLUNAS_A 
+    const inteiro N_COLUNAS_B = N_LINHAS_A 
+
+    funcao inicio()
+    {
+        inteiro matrizA[N_LINHAS_A][N_COLUNAS_A] 
+        inteiro matrizB[N_LINHAS_B][N_COLUNAS_B] 
+        
+        inteiro linha, coluna
+        escreva("--- Carregamento da MATRIZ A (", N_LINHAS_A, "x", N_COLUNAS_A, ") ---\n")
+        para (linha = 0; linha < N_LINHAS_A; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS_A; coluna++)
+            {
+                escreva("A[", linha, "][", coluna, "]: ")
+                leia(matrizA[linha][coluna])
+            }
+        }
+        escreva("\n--- Calculando B = Transposta de A ---\n")
+        para (linha = 0; linha < N_LINHAS_B; linha++) // 4 linhas
+        {
+            para (coluna = 0; coluna < N_COLUNAS_B; coluna++) // 3 colunas
+            {
+                matrizB[linha][coluna] = matrizA[coluna][linha]
+            }
+        }
+        escreva("\n--- MATRIZ TRANSPOSTA (B: ", N_LINHAS_B, "x", N_COLUNAS_B, ") ---\n")
+        para (linha = 0; linha < N_LINHAS_B; linha++)
+        {
+            para (coluna = 0; coluna < N_COLUNAS_B; coluna++)
+            {
+                escreva(matrizB[linha][coluna], "\t") 
+            }
+            escreva("\n")
+        }
+    }
+}
