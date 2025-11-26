@@ -1,0 +1,39 @@
+programa
+{
+	const inteiro TAMANHO = 5
+	inteiro meuVetor[TAMANHO]
+	funcao logico existeNoVetor(inteiro vetorInteiros[], inteiro n, inteiro numeroBuscado) 
+	{
+		inteiro j 
+		para (j = 0; j < n; j++)
+		{
+			se (vetorInteiros[j] == numeroBuscado)
+			{
+				retorne verdadeiro
+			}
+		}
+		retorne falso
+	}
+
+	funcao inicio()
+	{
+		inteiro numero1 = 42
+		inteiro numero2 = 99
+		logico resultado1
+		logico resultado2
+		
+		meuVetor[0] = 10
+		meuVetor[1] = 25
+		meuVetor[2] = 42 
+		meuVetor[3] = 77
+		meuVetor[4] = 91
+		
+		escreva("Vetor de entrada: [10, 25, 42, 77, 91]\n")
+		resultado1 = existeNoVetor(meuVetor, TAMANHO, numero1)
+		escreva("\nBusca por ", numero1, ":\n")
+		escreva("Resultado: ", resultado1, "\n") 
+		resultado2 = existeNoVetor(meuVetor, TAMANHO, numero2)
+		escreva("\nBusca por ", numero2, ":\n")
+		escreva("Resultado: ", resultado2, "\n") 
+	}
+}
